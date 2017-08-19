@@ -1,0 +1,16 @@
+.RectangleForm {
+  display: flex;
+}
+
+.RectangleForm-inputWrap {
+  padding: 3px 10px;
+  display: flex;
+}
+
+.RectangleForm-input {
+  width: 50px;
+}
+
+.RectangleForm-label {
+  padding-right: 6px;
+}

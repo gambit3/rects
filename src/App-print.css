@@ -1,0 +1,13 @@
+@media print {
+ /* All your print styles go here */
+ .App-header, .App-rectangleForms, .App-viewportTitle { display: none !important; }
+
+ .App-rectangles {
+   -webkit-print-color-adjust: exact;
+   background-color: #00dc83;
+ }
+
+ .App-rectangle {
+   background-color: #fff;
+ }
+}

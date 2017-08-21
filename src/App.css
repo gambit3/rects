@@ -1,38 +1,60 @@
 .App {
-  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 30px;
 }
 
 .App-header {
+  text-align: center;
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.App-rectangleForms {
+  padding: 20px;
+  border: 1px solid #868e96;
+  border-radius: 2px;
+  margin: 5px;
+}
+
+.App-addRectButton {
+  margin-top: 10px;
+  border: 1px solid #007bff;
+  color: #007bff;
+  background: transparent;
+}
+
+.App-viewportTitle {
+  padding: 5px;
 }
 
 .App-rectangles {
   position: relative;
   width: 100%;
   top: 0;
-  bottom: 0;
+  flex-grow: 1;
+  /*background-color: #fff;*/
 }
 
 .App-rectangle {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: red;
+  background-color: #00dc83;
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

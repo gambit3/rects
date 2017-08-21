@@ -1,41 +1,55 @@
-import React, { Component } from 'react';
-import './RectangleForm.css';
+import React from "react";
+import "./RectangleForm.css";
 
-class RectangleForm extends Component {
-  handleInputChange(inputName, value) {
-    if(value.length > 0 && isNaN(value)) return;
-    // ? dont fire the event if nothing changed
+const RectangleForm = props => {
+  const handleInputChange = (inputName, value) => {
+    if (value.length > 0 && isNaN(value)) return;
 
     const newSizeAndPosition = {
-      width: this.props.width,
-      height: this.props.height,
-      top: this.props.top,
-      left: this.props.left,
-    }
+      width: props.width,
+      height: props.height,
+      top: props.top,
+      left: props.left
+    };
     newSizeAndPosition[inputName] = value;
 
-    this.props.onChange(newSizeAndPosition);
-  }
+    props.onChange(newSizeAndPosition);
+  };
 
-  render() {
-    const labels = {
-      width: 'Width',
-      height: 'Height',
-      top: 'Top',
-      left: 'Left',
-    }
+  const labels = {
+    width: "Width",
+    height: "Height",
+    top: "Top",
+    left: "Left"
+  };
 
-    const inputs = Object.keys(labels).map( (inputName)=> {
-      return <div className="RectangleForm-inputWrap" key={inputName}>
-        <div className="RectangleForm-label">{labels[inputName]}:</div>
-        <input className="RectangleForm-input"
-            type="text" value={this.props[inputName]}
-            onChange={(e)=>this.handleInputChange(inputName, e.target.value)} />
+  const inputs = Object.keys(labels).map(inputName => {
+    return (
+      <div className="RectangleForm-inputWrap" key={inputName}>
+        <div className="RectangleForm-label">
+          {labels[inputName]}:
+        </div>
+        <input
+          className="RectangleForm-input"
+          type="text"
+          value={props[inputName]}
+          onChange={e => handleInputChange(inputName, e.target.value)}
+        />
       </div>
-    })
+    );
+  });
 
-    return <div className="RectangleForm">{inputs}</div>
-  }
-}
+  return (
+    <div className="RectangleForm">
+      {inputs}
+      <button
+        className="RectangleForm-removeButton"
+        onClick={() => props.onRemove()}
+      >
+        Remove
+      </button>
+    </div>
+  );
+};
 
 export default RectangleForm;

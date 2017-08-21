@@ -1,5 +1,7 @@
 .RectangleForm {
   display: flex;
+  padding: 5px 0;
+  flex-wrap: wrap;
 }
 
 .RectangleForm-inputWrap {

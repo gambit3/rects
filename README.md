@@ -2,6 +2,12 @@ This is a test / exercise project for recruitment purposes.
 
 ## Notes
 
+- Instead of validating the widths of rectangles and marking it as an error a conscious decision was made to truncate
+the widths of the too wide dimensions are input - as it arguably makes a little better user exaperince and shocases
+react controlled inputs and lifecycle a little bit more
+
+- The instruction: "The sum of widths cannot be larger than the viewport width."
+was taken literally and left position is not taken into account when truncating
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
